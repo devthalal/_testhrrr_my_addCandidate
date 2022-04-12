@@ -1,0 +1,1 @@
+{"name":"addCandidate","type":"function","source":{"https":"https://github.com/devthalal/_hiringApp_addCandidate","ssh":"git@github.com:devthalal/_hiringApp_addCandidate.git"},"language":"nodejs","start":"npm run start","build":"npm run build","postPull":"npm i"}
