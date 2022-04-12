@@ -1,27 +1,27 @@
+import fs from "fs";
+import path from "path";
+import { getDB, getBody, sendResponse, shieldApi } from "./utils.js";
 
-    import fs from 'fs'
-    import path from 'path'
-// For testing take pull from Appblox/node-blox-sdk and npm install from path
-// import { env } from 'node-blox-sdk'
-// env.init()
-
+/**
+ * Add candidate request hanlder
+ * @param {*} req
+ * @param {*} res
+ */
 const addCandidate = async (req, res) => {
   try {
-    // const DB_FILE = path.resolve(process.env.DB_FILE_PATH)
-    // const inmemDB = getDB(DB_FILE)
-    // const newId = new Date().getTime()
-    // const newItem = await getBody(req)
-    // const newEntry = { id: newId, item: newItem }
-    // console.log('Request to add -', newItem)
-    // inmemDB.push(newEntry)
-    // fs.writeFileSync(DB_FILE, JSON.stringify(inmemDB))
-    // console.log('Updated DB:
-', inmemDB)
-    // console.log('
-')
-    sendResponse(res, 200, "Hello from addCandidate")
+    const DB_FILE = path.resolve("../localdb.json");
+    const localDB = getDB(DB_FILE);
+    const id = new Date().getTime();
+    const candidateData = await getBody(req);
+    localDB.push({ ...candidateData, id });
+    fs.writeFileSync(DB_FILE, JSON.stringify(localDB));
+    sendResponse(res, 200, {
+      status: true,
+      msg: "Candidate added successfully",
+    });
   } catch (e) {
-    console.log(e)
-    sendResponse(res, 500, { status: 'failed', errMsg: e.message })
+    sendResponse(res, 500, { status: false, msg: e.message, err: e });
   }
-}
+};
+
+export default { addCandidate };
