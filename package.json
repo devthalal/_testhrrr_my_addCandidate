@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "preinstall" : "git clone https://devthalal:$GIT_TOKEN@github.com/Appblox/node-blox-sdk.git",
+    "preinstall" : "git clone https://devthalal:$GIT_TOKEN@github.com/Appblox/node-blox-sdk.git && cd node-blox-sdk && npm install && cd -",
     "start": "node index.js"
   },
   "type": "module",
