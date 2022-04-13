@@ -1,7 +1,6 @@
 import fs from "fs";
 import path from "path";
 import { getDB, getBody, sendResponse } from "./utils.js";
-
 import { env, shield, internals } from "node-blox-sdk";
 
 env.init();
@@ -30,14 +29,12 @@ const addCandidate = async (req, res) => {
     sendResponse(res, 200, {
       status: true,
       msg: "Candidate added successfully",
-      env: process.env,
     });
   } catch (e) {
     sendResponse(res, 500, {
       status: false,
       msg: e.message,
       err: e,
-      env: process.env,
     });
   }
 };
