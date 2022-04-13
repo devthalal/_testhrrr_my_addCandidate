@@ -7,10 +7,10 @@ import { env, shield, internals } from "node-blox-sdk";
 env.init();
 
 // Initializes sdk with credentials
-// internals.initialize({
-//   clientId: process.env.CLIENT_ID,
-//   clientSecret: process.env.CLIENT_SECRET,
-// });
+internals.initialize({
+  clientId: process.env.CLIENT_ID,
+  clientSecret: process.env.CLIENT_SECRET,
+});
 
 /**
  * Add candidate request hanlder
@@ -19,7 +19,7 @@ env.init();
  */
 const addCandidate = async (req, res) => {
   try {
-    // const userUID = await shield.getUID(req);
+    const userUID = await shield.getUID(req);
 
     const DB_FILE = path.resolve("../localdb.json");
     const localDB = getDB(DB_FILE);

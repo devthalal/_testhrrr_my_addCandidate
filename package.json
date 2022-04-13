@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "preinstall" : "git clone https://devthalal:$GIT_TOKEN@github.com/Appblox/node-blox-sdk.git",
-    "start": "node index.js",
-    "postinstall": "rm -rf node-blox-sdk"
+    "start": "node index.js"
   },
   "type": "module",
   "keywords": [],
