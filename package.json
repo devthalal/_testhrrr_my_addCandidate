@@ -4,13 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "preinstall" : "git clone https://devthalal:$GIT_TOKEN@github.com/Appblox/node-blox-sdk.git",
+    "start": "node index.js",
+    "postinstall": "rm -rf node-blox-sdk"
   },
   "type": "module",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node-blox-sdk": "git+https://devthalal:$GIT_TOKEN@github.com/Appblox/node-blox-sdk.git"
+    "node-blox-sdk": "file:./node-blox-sdk"
   }
 }
