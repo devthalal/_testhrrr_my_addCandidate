@@ -1,8 +1,6 @@
 import fs from "fs";
 import path from "path";
 
-export const shieldApi = "https://shield-dev.appblox.io";
-
 /**
  * Create or get file
  * @param {*} filePath
