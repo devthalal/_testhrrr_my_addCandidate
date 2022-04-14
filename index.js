@@ -18,7 +18,12 @@ internals.initialize({
  */
 const addCandidate = async (req, res) => {
   try {
-    const userUID = await shield.getUID(req);
+    let userUID;
+    try {
+      userUID = await shield.getUID(req);
+    } catch (error) {
+      console.log(error);
+    }
 
     const DB_FILE = path.resolve("../localdb.json");
     const localDB = getDB(DB_FILE);
