@@ -18,9 +18,12 @@ internals.initialize({
  */
 const addCandidate = async (req, res) => {
   try {
-   
-    if (req.path.includes("health")) {
-      return sendResponse(res, 200, { status: true, msg: "Health check success" });
+    
+    if ((req.params["health"] = "health")) {
+      return sendResponse(res, 200, {
+        status: true,
+        msg: "Health check success",
+      });
     }
 
     let userUID;
