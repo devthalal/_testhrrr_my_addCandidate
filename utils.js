@@ -85,6 +85,6 @@ export const getBody = async (req) => {
 export const healthCheck = (res) => {
   sendResponse(res, 200, {
     status: true,
-    msg: "Candidate added successfully",
+    msg: "Health check success",
   });
 }
