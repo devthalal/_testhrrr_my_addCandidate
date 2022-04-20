@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { getDB, getBody, sendResponse } from "./utils.js";
+import { getDB, getBody, sendResponse, healthCheck } from "./utils.js";
 import { env, shield, internals } from "node-blox-sdk";
 
 env.init();
@@ -18,6 +18,11 @@ internals.initialize({
  */
 const addCandidate = async (req, res) => {
   try {
+   
+    if (req.path.includes("health")) {
+      return healthCheck(res);
+    }
+
     let userUID;
     try {
       userUID = await shield.getUID(req);

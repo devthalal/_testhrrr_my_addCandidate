@@ -81,3 +81,10 @@ export const getBody = async (req) => {
   return JSON.parse(data || "{}");
 };
 
+
+export const healthCheck = (res) => {
+  sendResponse(res, 200, {
+    status: true,
+    msg: "Candidate added successfully",
+  });
+}
