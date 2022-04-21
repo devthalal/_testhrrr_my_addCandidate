@@ -19,9 +19,9 @@ internals.initialize({
 const addCandidate = async (req, res) => {
   try {
     
-    if ((req.params["health"] = "health")) {
+    if (req.params["health"] === "health") {
       return sendResponse(res, 200, {
-        status: true,
+        success: true,
         msg: "Health check success",
       });
     }
@@ -52,4 +52,4 @@ const addCandidate = async (req, res) => {
   }
 };
 
-export default { addCandidate };
+export default addCandidate;
