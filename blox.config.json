@@ -1,1 +1,1 @@
-{"name":"addCandidate","type":"function","source":{"https":"https://github.com/devthalal/_hiringApp_addCandidate","ssh":"git@github.com:devthalal/_hiringApp_addCandidate.git"},"language":"nodejs","start":"npm run start","build":"npm run build","postPull":"npm i"}
+{"name":"my_addCandidate","type":"function","source":{"https":"https://github.com/devthalal/_testhrrr_my_addCandidate","ssh":"git@github.com:devthalal/_testhrrr_my_addCandidate.git"},"language":"nodejs","start":"npm run start","build":"npm run build","postPull":"npm i"}
