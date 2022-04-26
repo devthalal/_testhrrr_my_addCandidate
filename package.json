@@ -1,0 +1,17 @@
+{
+  "name": "addCandidate",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "preinstall" : "git clone https://devthalal:$GIT_TOKEN@github.com/Appblox/node-blox-sdk.git && cd node-blox-sdk && npm install && cd -",
+    "start": "node index.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-blox-sdk": "file:./node-blox-sdk"
+  }
+}
